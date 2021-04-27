@@ -267,9 +267,9 @@ int main(void) {
   rcc_periph_clock_enable(RCC_GPIOB); /* For LED, USB pull-up and TIM2. */
   rcc_periph_clock_enable(RCC_AFIO); /* For MCO. */
 
-  /* Setup PB1 for the LED. */
-  gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_2_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, GPIO1);
-  gpio_set(GPIOB, GPIO1);
+  /* Setup PB12 for the LED. */
+  gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_2_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, GPIO12);
+  gpio_set(GPIOB, GPIO12);
 
   /* Pull PA1 down to GND, which is adjascent to timer imput and can be used as an convenient return path. */
   gpio_set_mode(GPIOA, GPIO_MODE_OUTPUT_2_MHZ, GPIO_CNF_OUTPUT_PUSHPULL, GPIO1);
@@ -281,7 +281,7 @@ int main(void) {
 
   usbcdc_init();
 
-  gpio_clear(GPIOB, GPIO1);
+  gpio_clear(GPIOB, GPIO12);
 
   timer_setup();
   systick_ms_setup();
@@ -351,6 +351,6 @@ void sys_tick_handler(void) {
     timer_set_counter(TIM2, 1);
     timer_set_counter(TIM2, 0);
     freq_scratch = 0;
-    gpio_toggle(GPIOB, GPIO1);
+    gpio_toggle(GPIOB, GPIO12);
   }
 }
