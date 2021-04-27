@@ -7,4 +7,5 @@ MEMORY {
 }
 
 /* Include the common ld script. */
-INCLUDE libopencm3_stm32f1.ld
+/* INCLUDE libopencm3_stm32f1.ld */
+INCLUDE cortex-m-generic.ld
