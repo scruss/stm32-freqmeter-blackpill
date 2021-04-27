@@ -6,6 +6,8 @@ Measured frequency are sent through USB CDC and you can view it with terminal ut
 The code can work unmodified on Maple Mini or its clones (although the bootloader will be erased),
 and minimal modifications (LED and USB pull-up pins) are required for other boards.
 
+ → this fork has been modified for the [STM32F103C8T6 Black Pill](https://stm32-base.org/boards/STM32F103C8T6-Black-Pill.html).
+
 Features
 --------
 
