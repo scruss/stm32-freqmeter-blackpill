@@ -7,6 +7,21 @@ The code can work unmodified on Maple Mini or its clones (although the bootloade
 and minimal modifications (LED and USB pull-up pins) are required for other boards.
 
  → this fork has been modified for the [STM32F103C8T6 Black Pill](https://stm32-base.org/boards/STM32F103C8T6-Black-Pill.html).
+ 
+ #### Uploading to Black Pill via ST-LINK
+ 
+ * set BOOT1 jumper to negative
+ * connect the ST-LINK to the SWD pins
+ * plug the ST-LINK into a USB port
+ * start your upload program - I use [stlink-gui](https://github.com/stlink-org/stlink)
+ * select connect button in GUI
+ * select **stm32-freqmeter.bin** file to upload
+ * upload to default location
+ * select disconnect button in GUI
+ * unplug the ST-LINK from the USB port
+ * set BOOT1 jumper back to positive.
+
+**NB**: The input pin PA0 is _not_ 5 V tolerant on the STM32F103C8T6!
 
 Features
 --------
